@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="MainPage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ooui" Version="0.12.309" />
+    <PackageReference Include="Ooui.AspNetCore" Version="0.12.309" />
+    <PackageReference Include="Ooui.Forms" Version="0.12.309" />
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="MainPage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyNewProject\MyNewProject.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>
