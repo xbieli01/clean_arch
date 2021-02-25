@@ -7,6 +7,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MyNewProject.Data.Orders;
+using MyNewProject.Framework.DataSources;
+using MyNewProject.UI.Orders.ViewModels;
+using MyNewProject.UI.Orders.Views;
+using MyNewProject.UseCases.Orders;
+using Prism.Ioc;
+using Prism.Unity;
+using Xamarin.Forms;
+using MainPageViewModel = MyNewProject.Web.ViewModels.MainPageViewModel;
 
 namespace MyNewProject.Web
 {
@@ -22,6 +31,10 @@ namespace MyNewProject.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<MainPageViewModel>();
+            services.AddTransient<OrdersRepository>();
+            services.AddTransient<IOrdersSource, InMemoryOrdersSource>();
+            services.AddTransient<GetCurrentUserOrders>();
             services.AddControllersWithViews();
         }
 
@@ -41,6 +54,16 @@ namespace MyNewProject.Web
             app.UseOoui();
 
             Xamarin.Forms.Forms.Init();
+
+            //var appXamarin = new App();
+            //var containerRegistry = appXamarin.Container.GetContainer();
+            //containerRegistry.RegisterType(OrdersRepository);
+
+            //containerRegistry.RegisterForNavigation<NavigationPage>();
+            //containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            //containerRegistry.Register<OrdersRepository>();
+            //containerRegistry.Register<IOrdersSource, InMemoryOrdersSource>();
+            //containerRegistry.Register<GetCurrentUserOrders>();
 
             app.UseRouting();
 
