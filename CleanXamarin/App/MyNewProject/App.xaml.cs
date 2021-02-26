@@ -30,7 +30,7 @@ namespace MyNewProject
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.Register<OrdersRepository>();
-            containerRegistry.Register<IOrdersSource, InMemoryOrdersSource>();
+            containerRegistry.Register<IOrdersSource, WebApiOrdersSource>();
             containerRegistry.Register<GetCurrentUserOrders>();
         }
     }
