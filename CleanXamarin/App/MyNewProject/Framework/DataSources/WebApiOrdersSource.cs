@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Reflection;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 using MyNewProject.Data.Orders;
 using MyNewProject.Domain.Orders;
 
@@ -14,8 +17,15 @@ namespace MyNewProject.Framework.DataSources
 
         public WebApiOrdersSource()
         {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location))
+                .AddJsonFile("config.json");
+            var configuration = builder.Build();
+
+            var serviceURL = configuration["DBService:BaseAddress"];
+
             client = new HttpClient();
-            client.BaseAddress = new Uri("http://localhost:19135/");
+            client.BaseAddress = new Uri(serviceURL);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
