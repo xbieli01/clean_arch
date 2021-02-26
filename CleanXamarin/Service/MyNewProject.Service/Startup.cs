@@ -14,6 +14,7 @@ using MyNewProject.Domain.Orders;
 using MyNewProject.Service.Models;
 using MyNewProject.Service.Models.DataManager;
 using MyNewProject.Service.Models.Repository;
+using Pomelo.EntityFrameworkCore.MySql.Storage;
 
 namespace MyNewProject.Service
 {
@@ -29,7 +30,14 @@ namespace MyNewProject.Service
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // ms sql server
             services.AddDbContext<MyNewProjectContext>(opts => opts.UseSqlServer(Configuration["ConnectionString:MyNewProjectDB"]));
+            //// mysql
+            //services.AddDbContextPool<MyNewProjectContext>(opts => opts.UseMySql(Configuration["ConnectionString:MyNewProjectDB"]));
+            //// oracle
+            //services.AddDbContextPool<MyNewProjectContext>(opts => opts.UseOracle(Configuration["ConnectionString:MyNewProjectDB"]));
+
+
             services.AddScoped<IDataRepository<Order>, OrderManager>();
             services.AddControllers();
 
