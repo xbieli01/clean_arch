@@ -15,48 +15,48 @@ namespace MyNewProject.Framework.DataSources
             {
                     new Order
                     {
-                        OrderId = "A001",
-                        DeliveryTime = DateTime.Now.ToShortDateString()
+                        OrderId = 1001,
+                        DeliveryTime = DateTime.Now
                     },
                     new Order
                     {
-                        OrderId = "A002",
-                        DeliveryTime = DateTime.Now.ToShortDateString()
+                        OrderId = 1002,
+                        DeliveryTime = DateTime.Now
                     },
                     new Order
                     {
-                        OrderId = "A003",
-                        DeliveryTime = DateTime.Now.ToShortDateString()
+                        OrderId = 1003,
+                        DeliveryTime = DateTime.Now
                     },
                     new Order
                     {
-                        OrderId = "A004",
-                        DeliveryTime = DateTime.Now.ToShortDateString()
+                        OrderId = 1004,
+                        DeliveryTime = DateTime.Now
                     },
                     new Order
                     {
-                        OrderId = "A005",
-                        DeliveryTime = DateTime.Now.ToShortDateString()
+                        OrderId = 1005,
+                        DeliveryTime = DateTime.Now
                     },
                     new Order
                     {
-                        OrderId = "A006",
-                        DeliveryTime = DateTime.Now.ToShortDateString()
+                        OrderId = 1006,
+                        DeliveryTime = DateTime.Now
                     },
                     new Order
                     {
-                        OrderId = "A007",
-                        DeliveryTime = DateTime.Now.ToShortDateString()
+                        OrderId = 1007,
+                        DeliveryTime = DateTime.Now
                     },
                     new Order
                     {
-                        OrderId = "A008",
-                        DeliveryTime = DateTime.Now.ToShortDateString()
+                        OrderId = 1008,
+                        DeliveryTime = DateTime.Now
                     },
                     new Order
                     {
-                        OrderId = "A009",
-                        DeliveryTime = DateTime.Now.ToShortDateString()
+                        OrderId = 1009,
+                        DeliveryTime = DateTime.Now
                     }
             };
         }
