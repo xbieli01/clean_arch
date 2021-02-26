@@ -33,7 +33,7 @@ namespace MyNewProject.Web
         {
             services.AddTransient<MainPageViewModel>();
             services.AddTransient<OrdersRepository>();
-            services.AddTransient<IOrdersSource, InMemoryOrdersSource>();
+            services.AddTransient<IOrdersSource, WebApiOrdersSource>();
             services.AddTransient<GetCurrentUserOrders>();
             services.AddControllersWithViews();
         }
